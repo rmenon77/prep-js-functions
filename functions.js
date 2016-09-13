@@ -12,6 +12,22 @@
  *  functions.
  */
 
+//declare 2 variables and assign them random numbers
+var a = 12;
+var b = 9;
+
+//function add
+//adds variable a and b
+//store the variable in var named sum
+
+function add(num1, num2){
+return num1 + num2;
+
+
+}
+var sum = add(a, b);
+console.log(sum);
+
 
 /**
  *  #2
@@ -31,6 +47,14 @@
  */
 
 
+function subtract(num1, num2){
+return num1 - num2;
+
+}
+
+var difference = subtract(a, b);
+console.log(difference);
+
 /**
  *  #4
  *  Function - multiply
@@ -38,6 +62,14 @@
  *  This function returns the result of multiplying `b` by `a`.
  *  Store this value in a variable named `product`
  */
+
+function multiply(num1, num2){
+return num1 * num2;
+
+
+}
+var product = multiply(a, b);
+console.log(product);
 
 
 /**
@@ -51,6 +83,13 @@
  */
 
 
+function checkDifference(X){
+return "My football team lost " + X + " times this week"; 
+
+}
+var timesLost = checkDifference(difference);
+console.log(timesLost); 
+
 /**
  *  #6
  *  Function - checkSum
@@ -60,7 +99,15 @@
  *  "I CAN ADDZ X NUMBERS"  where `X` is the value
  *  stored in the variable `sum`.
  */
+ // var sum adds a + b
 
+function checkSum (X) {
+return "I CAN ADDZ " + X + " NUMBERS";
+
+
+}
+var addNumbers = checkSum(sum);
+console.log(addNumbers);
 
 /**
  *  #7
@@ -71,7 +118,12 @@
  *  then prints the result to the console.
  */
 
+function checkProduct(num1, num2) {
+	return num1 * num2;
+}
 
+var numResult = checkProduct(product, difference);
+console.log(numResult);
 /**
  *  #8
  *  Function - addThenSubtract
@@ -87,6 +139,22 @@
  */
 
 
+
+function addThenSubtract(num1, num2, num3) {
+//return num1 + num2 - num3;
+var sum = add(num1, num2);
+var difference = subtract(sum, num3);
+return difference;
+
+}
+ 
+ var numResult2 = addThenSubtract(product, sum, difference);
+ console.log(numResult2);
+
+// one line of code:
+//return subtract (add(n1, n2), n3);
+//console.log(addThenSubtract(a,b,c));
+ 
 /**
  *  #9
  *  Function - addThenMultiply
@@ -98,6 +166,18 @@
  *
  *  Store the return of this function to a variable named `howMany`
  */
+
+
+function addThenMultiply(num1, num2, num3) {
+//return num1 + num2 * num3;
+var sum = add(num1, num2);
+var product = multiply(sum, num3);
+return product;
+
+}
+
+var howMany = addThenMultiply(product, sum, difference);
+console.log(howMany);
 
 
 /**
@@ -115,6 +195,14 @@
  * Store the return value to a variable named `myFullName`
  */
 
+function createFullName(firstName, lastName) {
+	return firstName  +  " " + lastName;
+	
+}
+
+var myFullName = createFullName("Ruby", "Menon");
+console.log(myFullName);
+
 
 /**
  *  #11
@@ -131,6 +219,26 @@
  *  Store the return value to a variable named** `canDrinkBeer`
  */
 
+// set up function first
+// number argument "age" will be a number data structure
+// returns a boolean value of true or false
+// if age is lower will yield an if statement with else structure
+// call the function but it requires a var to store the canDrinkBeer value 
+// vs. just using the console.log(verifyDrinkingAge(29))
+
+function verifyDrinkingAge(age) {
+		if   (age >= 21) {
+			return true;
+		} else {
+			return false;
+
+		}
+		
+
+}
+
+var canDrinkBeer = verifyDrinkingAge(19);
+console.log(canDrinkBeer);
 
 /**
  *  #12
@@ -142,6 +250,20 @@
  *  should be "This Party will have an open bar".
  */
 
+function throwParty(age) {
+		if   (age === false) {
+			return "This Party will have an open bar";
+
+			} 
+			else 
+				{return "This Party will have tons of cake";
+
+			}
+		
+
+}
+
+console.log(throwParty(canDrinkBeer));
 
 /**
  *  #13
@@ -164,6 +286,17 @@
  */
 
 
+
+function eatFood(firstName, lastName, food) {
+	var myFullName = createFullName(firstName, lastName);
+	return myFullName + " " + "loves to eat" + " " + food;
+
+}
+var input = eatFood("Ruby", "Menon", "Pizza");
+console.log(input);
+
+ 
+
 /**
  *  #14
  *  Function - repeater
@@ -176,3 +309,24 @@
  *  othewise the message will be `"Let it go.... LET IT GOOOOOOoOoOoOo..."`
  */
 
+// return a string X amount of times
+// X is the value stored at howMany = 387; var a=12; var b=9; product=108 sum=21 diff=3
+// inside the function:
+//		check the value of canDrinkBeer
+//		if the value is true then "Bacon Pancakes"
+//		if the value is false then "LET IT G000000000"
+
+	
+// how many is a global variable
+// var howMany = addThenMultiply(product, sum, difference);
+
+function repeater(x, age){
+  for(var i = 0; i<x; i++){
+    if(age === true){
+      console.log("bacon Pancakes");
+    }else{
+      console.log("let it go...");
+    }
+  }
+}
+repeater(howMany, canDrinkBeer);
